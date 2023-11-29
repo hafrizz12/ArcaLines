@@ -1,2 +1,4 @@
-package org.hafidzmrizky.smkbi.view.admin;public class FlightManagement {
+package org.hafidzmrizky.smkbi.view.admin;
+
+public class FlightManagement {
 }

@@ -24,6 +24,12 @@
                 <scope>import</scope>
                 <version>${vaadin.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <optional>true</optional>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -42,10 +48,24 @@
         </dependency>
 
         <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hotswapagent</groupId>
+            <artifactId>hotswap-agent</artifactId>
+            <version>1.3.0</version>
+            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -68,7 +88,7 @@
                     background. Consider using "0" and trigger restart manually
                     by hitting enter.
                     -->
-                    <scan>2</scan>
+                    <scan>5</scan>
                     <!-- Use war output directory to get the webpack files -->
                     <webAppConfig>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
@@ -76,7 +96,7 @@
                 </configuration>
             </plugin>
 
-            <!--
+            <!--\
                 Take care of synchronizing java dependencies and imports in
                 package.json and main.js files.
                 It also creates webpack.config.js if not exists yet.
